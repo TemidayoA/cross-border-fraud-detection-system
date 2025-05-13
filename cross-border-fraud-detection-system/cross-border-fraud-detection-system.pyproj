@@ -23,6 +23,11 @@
   <ItemGroup>
     <Compile Include="cross_border_fraud_detection_system.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="models\" />
+    <Folder Include="src\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
