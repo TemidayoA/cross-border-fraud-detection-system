@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="cross_border_fraud_detection_system.py" />
+    <Compile Include="src\config.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
