@@ -26,10 +26,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
+    <Folder Include="data\credit\" />
     <Folder Include="models\" />
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\credit\credit_train.csv" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
