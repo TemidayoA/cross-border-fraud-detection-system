@@ -37,6 +37,7 @@
     <Content Include="data\fraud\fraud_test.csv" />
     <Content Include="data\fraud\fraud_train.csv" />
     <Content Include="models\credit_model.joblib" />
+    <Content Include="models\fraud_model.joblib" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
