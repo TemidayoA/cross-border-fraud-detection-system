@@ -24,6 +24,7 @@
     <Compile Include="cross_border_fraud_detection_system.py" />
     <Compile Include="src\config.py" />
     <Compile Include="src\data_loader.py" />
+    <Compile Include="src\preprocessing.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
