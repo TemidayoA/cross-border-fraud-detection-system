@@ -23,3 +23,16 @@ def split_features_target(
     if config.id_col is not None and config.id_col in X.columns:
         X = X.drop(columns=[config.id_col])
     return X, y
+
+def train_valid_split(
+    X: pd.DataFrame,
+    y: pd.Series,
+    config: DatasetConfig,
+):
+    return train_test_split(
+        X,
+        y,
+        test_size=config.test_size,
+        random_state=config.random_state,
+        stratify=y,
+    )
