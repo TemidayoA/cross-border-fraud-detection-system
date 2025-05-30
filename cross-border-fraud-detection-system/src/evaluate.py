@@ -33,3 +33,26 @@ def evaluate_binary_classification(
             metrics["roc_auc"] = np.nan
 
     return metrics
+def print_classification_report(y_true, y_pred):
+    print("Classification Report:")
+    print(classification_report(y_true, y_pred))
+
+
+def print_confusion(y_true, y_pred):
+    print("Confusion Matrix:")
+    print(confusion_matrix(y_true, y_pred))
+
+
+def evaluate_and_print(
+    task_name: str,
+    y_true,
+    y_pred,
+    y_prob=None,
+):
+    print(f"\n=== Evaluation for {task_name} ===")
+    metrics = evaluate_binary_classification(y_true, y_pred, y_prob)
+    for k, v in metrics.items():
+        print(f"{k}: {v:.4f}" if isinstance(v, float) else f"{k}: {v}")
+    print_classification_report(y_true, y_pred)
+    print_confusion(y_true, y_pred)
+    return metrics
