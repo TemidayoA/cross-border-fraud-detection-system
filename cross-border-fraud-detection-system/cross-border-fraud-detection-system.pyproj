@@ -25,6 +25,7 @@
     <Compile Include="src\config.py" />
     <Compile Include="src\data_loader.py" />
     <Compile Include="src\evaluate.py" />
+    <Compile Include="src\infer.py" />
     <Compile Include="src\preprocessing.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
