@@ -20,3 +20,12 @@ def main():
     X_train, X_valid, y_train, y_valid = train_valid_split(
         X_train_full, y_train_full, CREDIT_CONFIG
     )
+
+     numeric_features, categorical_features = detect_feature_types(X_train)
+    print("Numeric features:", numeric_features)
+    print("Categorical features:", categorical_features)
+
+    pipeline = build_credit_pipeline(numeric_features, categorical_features)
+
+    print("Fitting credit scoring model...")
+    pipeline.fit(X_train, y_train)
