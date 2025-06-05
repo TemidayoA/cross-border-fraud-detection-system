@@ -27,6 +27,7 @@
     <Compile Include="src\evaluate.py" />
     <Compile Include="src\infer.py" />
     <Compile Include="src\preprocessing.py" />
+    <Compile Include="src\train_credit.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
