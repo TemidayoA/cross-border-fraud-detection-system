@@ -21,7 +21,7 @@ def main():
         X_train_full, y_train_full, CREDIT_CONFIG
     )
 
-     numeric_features, categorical_features = detect_feature_types(X_train)
+    numeric_features, categorical_features = detect_feature_types(X_train)
     print("Numeric features:", numeric_features)
     print("Categorical features:", categorical_features)
 
@@ -46,3 +46,11 @@ def main():
         else None
     )
     evaluate_and_print("Credit Scoring (test)", y_test, y_test_pred, y_test_prob)
+    # Save model
+    model_path = os.path.join(MODELS_DIR, "credit_model.joblib")
+    joblib.dump(pipeline, model_path)
+    print(f"Saved credit model to {model_path}")
+
+
+if __name__ == "__main__":
+    main()
