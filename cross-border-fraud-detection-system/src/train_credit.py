@@ -29,3 +29,20 @@ def main():
 
     print("Fitting credit scoring model...")
     pipeline.fit(X_train, y_train)
+    print("Evaluating on validation set...")
+    y_valid_pred = pipeline.predict(X_valid)
+    y_valid_prob = (
+        pipeline.predict_proba(X_valid)[:, 1]
+        if hasattr(pipeline.named_steps["model"], "predict_proba")
+        else None
+    )
+    evaluate_and_print("Credit Scoring (validation)", y_valid, y_valid_pred, y_valid_prob)
+
+    print("Evaluating on test set...")
+    y_test_pred = pipeline.predict(X_test)
+    y_test_prob = (
+        pipeline.predict_proba(X_test)[:, 1]
+        if hasattr(pipeline.named_steps["model"], "predict_proba")
+        else None
+    )
+    evaluate_and_print("Credit Scoring (test)", y_test, y_test_pred, y_test_prob)
