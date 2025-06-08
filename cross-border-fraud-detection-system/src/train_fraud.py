@@ -1,0 +1,25 @@
+# src/train_fraud.py
+
+import os
+import joblib
+
+from .config import FRAUD_CONFIG, MODELS_DIR
+from .data_loader import load_dataset, split_features_target, train_valid_split
+from .preprocessing import detect_feature_types, build_fraud_pipeline
+from .evaluate import evaluate_and_print
+
+
+def main():
+    print("Loading fraud data...")
+    train_df, test_df = load_dataset(FRAUD_CONFIG)
+
+    X_train_full, y_train_full = split_features_target(train_df, FRAUD_CONFIG)
+    X_test, y_test = split_features_target(test_df, FRAUD_CONFIG)
+
+    X_train, X_valid, y_train, y_valid = train_valid_split(
+        X_train_full, y_train_full, FRAUD_CONFIG
+    )
+
+    numeric_features, categorical_features = detect_feature_types(X_train)
+    print("Numeric features:", numeric_features)
+    print("Categorical features:", categorical_features)
