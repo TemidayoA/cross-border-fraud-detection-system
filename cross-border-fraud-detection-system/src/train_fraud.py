@@ -45,3 +45,10 @@ def main():
         else None
     )
     evaluate_and_print("Fraud Detection (test)", y_test, y_test_pred, y_test_prob)
+    model_path = os.path.join(MODELS_DIR, "fraud_model.joblib")
+    joblib.dump(pipeline, model_path)
+    print(f"Saved fraud model to {model_path}")
+
+
+if __name__ == "__main__":
+    main()
