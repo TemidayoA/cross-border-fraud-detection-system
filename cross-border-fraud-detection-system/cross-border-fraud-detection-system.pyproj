@@ -24,6 +24,7 @@
     <Compile Include="cross_border_fraud_detection_system.py" />
     <Compile Include="observability\feature_importance.py" />
     <Compile Include="observability\logger.py" />
+    <Compile Include="observability\validator.py" />
     <Compile Include="src\config.py" />
     <Compile Include="src\data_loader.py" />
     <Compile Include="src\evaluate.py" />
